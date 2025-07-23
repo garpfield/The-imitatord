@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "imitators:facelesswanderer",
+      "identifier": "imitators:thelegged",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -210,8 +210,8 @@
       },
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:health": {
-        "value": 560,
-        "max": 560
+        "value": 786,
+        "max": 786
       },
       "minecraft:loot": {
         "table": "loot_tables/empty.json"
@@ -628,7 +628,7 @@
           {
             "queue_command": {
               "command": [
-                "function spotted_facelesswanderer"
+                "function spotted_thelegged"
               ]
             },
             "weight": 1
@@ -636,7 +636,7 @@
           {
             "queue_command": {
               "command": [
-                "function spotted_facelesswanderer2"
+                "function spotted_thelegged2"
               ]
             },
             "weight": 1
@@ -658,7 +658,7 @@
           {
             "queue_command": {
               "command": [
-                "function Despawn_facelesswanderer"
+                "function Despawn_thelegged"
               ]
             },
             "weight": 1
@@ -666,7 +666,7 @@
           {
             "queue_command": {
               "command": [
-                "function Despawn_facelesswanderer2"
+                "function Despawn_thelegged2"
               ]
             },
             "weight": 1

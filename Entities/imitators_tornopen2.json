@@ -2,8 +2,8 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "imitators:facelesswanderer",
-      "is_spawnable": true,
+      "identifier": "imitators:tornopen2",
+      "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
       "scripts": {
@@ -140,7 +140,7 @@
         },
         "minecraft:timer": {
           "looping": true,
-          "time": 2,
+          "time": 5,
           "time_down_event": {
             "target": "self",
             "event": "stalked"
@@ -204,34 +204,33 @@
           "spider",
           "monster",
           "mob",
-          "arthropod",
-          "raked"
+          "arthropod"
         ]
       },
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:health": {
-        "value": 560,
-        "max": 560
+        "value": 125,
+        "max": 125
       },
       "minecraft:loot": {
         "table": "loot_tables/empty.json"
       },
       "minecraft:collision_box": {
-        "height": 0.0,
-        "width": 2.4
+        "height": 1.25,
+        "width": 0.0
       },
       "minecraft:movement": {
-        "value": 0
+        "value": 0.61
       },
       "minecraft:underwater_movement": {
         "value": 0.05
       },
       "minecraft:attack": {
-        "damage": 30
+        "damage": 12
       },
       "minecraft:behavior.nearest_attackable_target": {
-        "priority": 5,
-        "must_see": true,
+        "priority": 20,
+        "must_see": false,
         "must_reach": false,
         "within_radius": 100,
         "entity_types": [
@@ -245,16 +244,16 @@
                 }
               ]
             },
-            "must_see": true,
+            "must_see": false,
             "must_reach": false,
-            "max_dist": 45.0
+            "max_dist": 100.0
           }
         ],
-        "persist_time": 1,
+        "persist_time": 8,
         "reselect_targets": true
       },
       "minecraft:movement.generic": {
-        "max_turn": 16
+        "max_turn": 13
       },
       "minecraft:behavior.melee_attack": {
         "priority": 2,
@@ -267,18 +266,17 @@
         "value": 150,
         "max": "150"
       },
-      "minecraft:can_climb": {},
       "minecraft:lookat": {
-        "allow_invulnerable": false,
+        "allow_invulnerable": true,
         "filters": {
           "test": "has_target"
         },
         "look_cooldown": [
           1,
-          1
+          5
         ],
-        "search_radius": 100.0,
-        "set_target": true
+        "search_radius": 115.0,
+        "set_target": false
       },
       "minecraft:damage_sensor": [
         [
@@ -314,39 +312,7 @@
       },
       "minecraft:behavior.look_at_player": {
         "priority": 7,
-        "look_distance": 20
-      },
-      "minecraft:behavior.avoid_mob_type": {
-        "priority": 1,
-        "entity_types": [
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "has_tag",
-                  "subject": "self",
-                  "value": "flee"
-                }
-              ],
-              "other_with_families": [
-                "ocelot",
-                "ocelot",
-                "ocelot",
-                "ocelot",
-                "irongolem"
-              ]
-            },
-            "max_dist": 0,
-            "max_flee": 0,
-            "walk_speed_multiplier": 2.2,
-            "sprint_speed_multiplier": 2.2
-          }
-        ]
+        "look_distance": 110
       },
       "minecraft:physics": {},
       "minecraft:conditional_bandwidth_optimization": {
@@ -361,8 +327,8 @@
         "is_pushable_by_piston": true
       },
       "minecraft:knockback_resistance": {
-        "value": 1.0,
-        "max": 1.0
+        "value": 0.65,
+        "max": 0.65
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 3
@@ -374,13 +340,77 @@
         "priority": 2
       },
       "minecraft:annotation.break_door": {
-        "break_time": 0.5,
+        "break_time": 0.1,
         "min_difficulty": "easy"
       },
       "minecraft:break_blocks": {
         "breakable_blocks": [
           "frog_spawn",
           "mangrove_boat",
+          "mangrove_leaves",
+          "mangrove_propagule",
+          "azalea",
+          "azalea_leaves",
+          "big_dripleaf",
+          "flowering_azalea",
+          "azalea_leaves_flowered",
+          "glow_lichen",
+          "hanging_roots",
+          "moss_carpet",
+          "small_dripleaf",
+          "spore_blossom",
+          "acacia_fence_gate",
+          "banner",
+          "bed",
+          "birch_fence_gate",
+          "boat",
+          "brown_mushroom",
+          "carpet",
+          "coral_fan",
+          "coral_fan_dead",
+          "double_plant",
+          "fence_gate",
+          "glass",
+          "glass_pane",
+          "jungle_fence_gate",
+          "ladder",
+          "leaves",
+          "leaves2",
+          "nether_sprouts",
+          "red_flower",
+          "reeds",
+          "sapling",
+          "sea_pickle",
+          "seagrass",
+          "spruce_fence_gate",
+          "stained_glass",
+          "stained_glass_pane",
+          "string",
+          "sweet_berries",
+          "tallgrass",
+          "twisting_vines",
+          "vine",
+          "weeping_vines",
+          "wither_rose",
+          "bamboo_fence_gate",
+          "cherry_fence_gate",
+          "mangrove_fence_gate",
+          "torchflower_seeds",
+          "torchflower_crop",
+          "pitcher_crop",
+          "cherry_sapling",
+          "torchflower",
+          "pink_petals",
+          "pitcher_plant",
+          "cherry_leaves",
+          "bamboo_raft",
+          "bamboo_chest_raft",
+          "cherry_boat",
+          "oak_chest_boat",
+          "spruce_chest_boat",
+          "birch_chest_boat",
+          "jungle_chest_boat",
+          "acacia_chest_boat",
           "dark_oak_chest_boat",
           "mangrove_chest_boat",
           "cherry_chest_boat"
@@ -389,38 +419,35 @@
       "minecraft:rail_movement": {
         "max_speed": 40.0
       },
-      "minecraft:behavior.random_stroll": {
-        "priority": 8
-      },
       "minecraft:equip_item": {},
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 : 0"
       },
       "minecraft:scale": {
-        "value": 1
-      },
-      "minecraft:breathable": {
-        "breathesWater": true,
-        "totalSupply": 999,
-        "suffocateTime": -1,
-        "generatesBubbles": false,
-        "breathesAir": true
+        "value": 1.1
       },
       "minecraft:timer": {
         "looping": true,
-        "time": 240.0,
+        "time": 34.0,
         "time_down_event": {
           "event": "on:tick_action"
         }
       },
-      "minecraft:behavior.flee_sun": {
-        "priority": 2,
-        "speed_multiplier": 2
+      "minecraft:breathable": {
+        "breathesWater": true,
+        "totalSupply": 20,
+        "suffocateTime": -1,
+        "generatesBubbles": true,
+        "breathesAir": true
       },
       "minecraft:fall_damage": {
         "value": 0
       },
       "minecraft:fire_immune": true,
+      "minecraft:on_target_escape": {
+        "event": "on:target_escape",
+        "target": "self"
+      },
       "minecraft:on_target_acquired": {
         "event": "on:target_acquired",
         "target": "self"
@@ -451,11 +478,12 @@
       "rush": {
         "queue_command": {
           "command": [
-            "playsound mob.oldgoatman.spotted @p",
+            "playsound mob.mvoid.spotted @p",
+            "playsound mob.mvoid.chase @p",
+            "summon lightning_bolt",
             "tag @p add visagex",
             "tag @p add gotcha",
-            "effect @s slowness 2 255 true",
-            "event entity @s stalk4"
+            "effect @p darkness 3 150 true"
           ]
         }
       },
@@ -628,7 +656,7 @@
           {
             "queue_command": {
               "command": [
-                "function spotted_facelesswanderer"
+                "function chase_tornopen_1"
               ]
             },
             "weight": 1
@@ -636,7 +664,7 @@
           {
             "queue_command": {
               "command": [
-                "function spotted_facelesswanderer2"
+                "function chase_tornopen_2"
               ]
             },
             "weight": 1
@@ -644,9 +672,24 @@
         ]
       },
       "on:target_escape": {
-        "queue_command": {
-          "command": []
-        }
+        "randomize": [
+          {
+            "queue_command": {
+              "command": [
+                "function disappear_tornopen"
+              ]
+            },
+            "weight": 1
+          },
+          {
+            "queue_command": {
+              "command": [
+                "function disappear_tornopen2"
+              ]
+            },
+            "weight": 1
+          }
+        ]
       },
       "on:wake_with_owner": {
         "queue_command": {
@@ -658,7 +701,7 @@
           {
             "queue_command": {
               "command": [
-                "function Despawn_facelesswanderer"
+                "function disappear_tornopen_"
               ]
             },
             "weight": 1
@@ -666,7 +709,7 @@
           {
             "queue_command": {
               "command": [
-                "function Despawn_facelesswanderer2"
+                "function disappear_tornopen_2"
               ]
             },
             "weight": 1

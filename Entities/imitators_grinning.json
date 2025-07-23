@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "imitators:facelesswanderer",
+      "identifier": "imitators:grinning",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -14,7 +14,7 @@
       "animations": {
         "allow": "animation.allown"
       },
-      "runtime_identifier": "pa:hadro"
+      "runtime_identifier": "pa:ourano"
     },
     "component_groups": {
       "evil": {
@@ -210,24 +210,24 @@
       },
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:health": {
-        "value": 560,
-        "max": 560
+        "value": 200,
+        "max": 200
       },
       "minecraft:loot": {
         "table": "loot_tables/empty.json"
       },
       "minecraft:collision_box": {
-        "height": 0.0,
-        "width": 2.4
+        "height": 1.8,
+        "width": 0.8
       },
       "minecraft:movement": {
         "value": 0
       },
       "minecraft:underwater_movement": {
-        "value": 0.05
+        "value": 0.12
       },
       "minecraft:attack": {
-        "damage": 30
+        "damage": 8
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 5,
@@ -241,13 +241,18 @@
                 {
                   "test": "is_family",
                   "subject": "other",
+                  "value": "monsters"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
                   "value": "player"
                 }
               ]
             },
             "must_see": true,
             "must_reach": false,
-            "max_dist": 45.0
+            "max_dist": 18.0
           }
         ],
         "persist_time": 1,
@@ -408,7 +413,7 @@
       },
       "minecraft:timer": {
         "looping": true,
-        "time": 240.0,
+        "time": 300.0,
         "time_down_event": {
           "event": "on:tick_action"
         }
@@ -628,7 +633,7 @@
           {
             "queue_command": {
               "command": [
-                "function spotted_facelesswanderer"
+                "function grinningspotted"
               ]
             },
             "weight": 1
@@ -636,7 +641,7 @@
           {
             "queue_command": {
               "command": [
-                "function spotted_facelesswanderer2"
+                "function grinningspotted2"
               ]
             },
             "weight": 1
@@ -658,7 +663,7 @@
           {
             "queue_command": {
               "command": [
-                "function Despawn_facelesswanderer"
+                "function theteethed_Despawn2"
               ]
             },
             "weight": 1
@@ -666,7 +671,15 @@
           {
             "queue_command": {
               "command": [
-                "function Despawn_facelesswanderer2"
+                "function grinning_Despawn"
+              ]
+            },
+            "weight": 1
+          },
+          {
+            "queue_command": {
+              "command": [
+                "function grinning_Despawn2"
               ]
             },
             "weight": 1
